@@ -1,0 +1,32 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value":"North Europe"
+        },
+         "publicIpName": {
+            "value":"app_ip"
+        },
+         "publicIpSku": {
+            "value":"Standard"
+        },
+         "publicIPAllocationMethod": {
+            "value":"Static"
+        },
+        "vmName": {
+            "value":"appvm"
+        },
+        "adminname": {
+            "value":"appusr"
+        },
+        "adminpassword": {
+            "reference":{
+                "keyVault":{
+                    "id":"/subscriptions/f1176b46-41a1-4f7f-ac08-bc1dad6b1a57/resourceGroups/staging-grp/providers/Microsoft.KeyVault/vaults/ExampleVault0597"
+                },
+                "secretName":"Vmpassword"
+            }
+        }
+    }
+}

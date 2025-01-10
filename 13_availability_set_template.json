@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "name": "app_avail_set",
+            "type": "Microsoft.Compute/availabilitySets",
+            "apiVersion": "2024-07-01",
+            "location": "northeurope",
+            
+            "properties": {
+                "platformFaultDomainCount":3,
+                "platformUpdateDomainCount":5
+            }
+        }
+    ],
+    "outputs": {}
+}
