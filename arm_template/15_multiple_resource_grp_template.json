@@ -1,0 +1,23 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "name": "[concat('group',copyIndex())]",
+            // "name": "group1",
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2024-08-01",
+            "location": "northeurope",
+            "dependsOn": [],
+            "copy":{
+                "name": "resourcecopy",
+                "count":3
+            },
+            "tags": {}
+        }
+    ],
+    "outputs": {}
+}
